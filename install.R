@@ -15,7 +15,7 @@ install_myApp <- function() {
   }
   
   # install needed packages from CRAN
-  pkg <- c("shiny")
+  pkg <- c("shiny", "magrittr")
   
   new.pkg <- pkg[!(pkg %in% installed.packages())]
   
@@ -26,14 +26,14 @@ install_myApp <- function() {
   update.packages(pkg[!(pkg %in% new.pkg)])
   
   # install needed packages from Bioconductor
-  bioc <- c("GSVA","limma","DOSE","clusterProfiler")
-  if(!(bioc %in% installed.packages())){
-    source("http://bioconductor.org/biocLite.R")
-    biocLite(bioc) 
-  }
+  # bioc <- c("GSVA","limma","DOSE","clusterProfiler")
+  # if(!(bioc %in% installed.packages())){
+  #   source("http://bioconductor.org/biocLite.R")
+  #   biocLite(bioc) 
+  # }
   
   # install needed packages from Github
-  devtools::install_github("jokergoo/ComplexHeatmap")
+  # devtools::install_github("jokergoo/ComplexHeatmap")
   # devtools::install_github(c("GuangchuangYu/DOSE", "GuangchuangYu/clusterProfiler"))
   
   message("\n All set. \n You might need to restart R before using GlioVis \n")
